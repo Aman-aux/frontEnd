@@ -1,0 +1,94 @@
+import React, { Component } from 'react';
+import * as Reactstrap from "react-bootstrap";
+import { Nav, NavItem, NavLink } from 'reactstrap';
+
+import { Dropdown, DropdownMenu, DropdownToggle, DropdownItem, UncontrolledDropdown, } from 'reactstrap';
+import { Link } from 'react-scroll'
+import LogIn from './login'
+import HomePage from './HomePage/homePage'
+import aboutUs from './HomePage/aboutUs'
+
+const Header = ({ sticky }) => (
+
+
+  <Reactstrap.Nav className="justify-content-end" activeKey="/home" style={{ marginTop: 30, paddingRight: 70 }}>
+    <Reactstrap.Navbar.Brand href="/" style={{ marginRight: 10 }}>
+      <img
+        alt=""
+        src="/images/logo.PNG"
+        width="50"
+        height="50"
+        className="d-inline-block align-top"
+      />
+    </Reactstrap.Navbar.Brand>
+
+    <b>  <p style={{ marginRight: 530 }} >  aUXtomate <br />Technologies</p> </b>
+
+    {/* <Reactstrap.Nav.Item>
+
+          <Reactstrap.Nav.Link ><a href="/aboutus" style={{ color: "black" }}>About Us </a></Reactstrap.Nav.Link>
+
+        </Reactstrap.Nav.Item>
+        <Reactstrap.Nav.Item>
+
+          <UncontrolledDropdown nav inNavbar>
+            <DropdownToggle nav caret style={{ color: "black" }}>
+              Options
+                     </DropdownToggle>
+            <DropdownMenu right>
+              <DropdownItem>
+                Option 1
+                       </DropdownItem>
+              <DropdownItem>
+                Option 2
+                       </DropdownItem>
+              <DropdownItem divider />
+              <DropdownItem>
+                Reset
+                       </DropdownItem>
+            </DropdownMenu>
+          </UncontrolledDropdown>
+        </Reactstrap.Nav.Item>
+        <Reactstrap.Nav.Item>
+          <Reactstrap.Nav.Link style={{ color: "black" }}>Services</Reactstrap.Nav.Link>
+        </Reactstrap.Nav.Item>
+        <Reactstrap.Nav.Item>
+          <Reactstrap.Nav.Link eventKey="link-3" style={{ color: "black" }}>
+            Support
+             </Reactstrap.Nav.Link>
+        </Reactstrap.Nav.Item>
+        <Reactstrap.Nav.Item>
+          <Reactstrap.Nav.Link>
+            Log In
+          </Reactstrap.Nav.Link>
+        </Reactstrap.Nav.Item> */}
+    <Nav >
+      <NavLink href="/aboutus" style={{ color: "black" }}>About Us</NavLink>
+      {/* <NavLink href="#">Option</NavLink> */}
+      <UncontrolledDropdown nav inNavbar>
+        <DropdownToggle nav caret style={{ color: "black" }}>
+          Options
+              </DropdownToggle>
+        <DropdownMenu left>
+          <DropdownItem>
+            Option 1
+                </DropdownItem>
+          <DropdownItem>
+            Option 2
+                </DropdownItem>
+          <DropdownItem divider />
+          <DropdownItem>
+            Reset
+                </DropdownItem>
+        </DropdownMenu>
+      </UncontrolledDropdown>
+      <NavLink href="/service" style={{ color: "black" }}>Services</NavLink>
+      <NavLink href="/support" style={{ color: "black" }}>Support</NavLink>
+      <NavLink href="/login" style={{ color: "#004170" }}><b>Login</b></NavLink>
+    </Nav>
+
+  </Reactstrap.Nav>
+
+)
+
+export default Header;
