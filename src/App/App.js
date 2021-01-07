@@ -26,22 +26,19 @@ function App() {
       <Switch>
 
         <Route exact path="/" component={HomePage}></Route>
-        <Route path="/SignUp" component={SignUp}></Route>
-        <Route path="/login" component={LogIn}></Route>
-        <Route path="/ResetPassword" component={ResetPassword}></Route>
-        <Route path="/homePage" component={HomePage}></Route>
-        <Route path="/aboutus" component={aboutus}></Route>
-        <Route path="/service" component={Service}></Route>
-        <Route path="/support" component={Support}></Route>
+        <Route exact path="/SignUp" component={SignUp}></Route>
+        <Route exact path="/login" component={LogIn}></Route>
+        <Route exact path="/ResetPassword" component={ResetPassword}></Route>
+        <Route exact path="/homePage" component={HomePage}></Route>
+        <Route exact path="/aboutus" component={aboutus}></Route>
+        <Route exact path="/service" component={Service}></Route>
+        <Route exact path="/support" component={Support}></Route>
 
         <Route path="/Consultaion" component={Consultaion} />
         <Route path="/FAQ" component={FAQ} />
         <Route path="/PrivacyPolicy" component={PrivacyPolicy} />
         <Route path="/sitemap" component={SiteMap} />
         <Route path="/TermsCondition" component={TermsCondition} />
-
-
-
       </Switch>
       <Footer />
     </div>

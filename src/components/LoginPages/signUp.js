@@ -15,10 +15,12 @@ import AccountCircle from '@material-ui/icons/AccountCircle';
 import LockRoundedIcon from '@material-ui/icons/LockRounded';
 import BusinessIcon from '@material-ui/icons/Business';
 import InputAdornment from "@material-ui/core/InputAdornment";
-import GoogleLogin from "react-google-login";
+// import GoogleLogin from "react-google-login";
 import Radio from '@material-ui/core/Radio';
 import { RadioGroup } from '@material-ui/core';
 import EmailIcon from '@material-ui/icons/Email';
+import GoogleLogin from 'react-google-login';
+import axios from 'axios'
 
 
 export default class SignUp extends React.Component {
@@ -64,10 +66,11 @@ export default class SignUp extends React.Component {
     let isValid = true;
 
     if (!input["name"]) {
+
       isValid = false;
       errors["name"] = "Please enter your name.";
-    }
 
+    }
     if (!input["email"]) {
       isValid = false;
       errors["email"] = "Please enter your email Address.";
@@ -85,6 +88,16 @@ export default class SignUp extends React.Component {
     if (!input["password"]) {
       isValid = false;
       errors["password"] = "Please enter your password.";
+
+    }
+
+    if (typeof input["password"] !== "undefined") {
+
+      var pattern1 = new RegExp("^(((?=.*[a-z])(?=.*[A-Z]))|((?=.*[a-z])(?=.*[0-9]))|((?=.*[A-Z])(?=.*[0-9])))(?=.{6,})");
+      if (!pattern1.test(input["password"])) {
+        isValid = false;
+        errors["password"] = "password should contain one uppercase one lowercase one special character and one integer";
+      }
     }
 
     if (!input["confirm_password"]) {
@@ -106,73 +119,39 @@ export default class SignUp extends React.Component {
 
     return isValid;
   }
-  // const useStyles = makeStyles((theme) => ({
-  //   root: {
-  //     height: '100vh',
-  //   },
+  signup(res) {
 
-  //   left: {
-  //     backgroundRepeat: 'no-repeat',
-  //     backgroundColor: "#004170",
-  //     backgroundSize: 'cover',
-  //     backgroundPosition: 'center',
-  //   },
-  //   paper: {
-  //     margin: theme.spacing(4, 4),
-  //     display: 'flex',
-  //     flexDirection: 'column',
-  //     alignItems: 'center',
-  //   },
-  //   avatar: {
-  //     margin: theme.spacing(1),
-  //     backgroundColor: theme.palette.secondary.main,
-  //   },
+    const googleresponse = {
+      Name: res.profileObj.name,
+      email: res.profileObj.email,
+      token: res.googleId,
+      Image: res.profileObj.imageUrl,
+      ProviderId: 'Google'
 
-  //   form: {
-  //     width: '50%', // Fix IE 11 issue.
-  //     marginTop: '10px',
-  //     margin: '0',
-  //     width: '300px',
+    };
+    debugger;
+    axios.post('http://localhost:60200/Api/Login/SocialmediaData', googleresponse)
+      .then((result) => {
 
-  //   },
-  //   submit: {
-  //     margin: theme.spacing(1, 0, 2),
-  //   },
-  //   black: {
-  //     color: "black",
-  //   },
-  //   inputBase: {
-  //     border: "2px solid #004170",
-  //     borderRadius: theme.shape.borderRadius,
-  //     height: "4vh",
-  //     padding: theme.spacing(2)
-  //   },
+        let responseJson = result;
+
+        sessionStorage.setItem("userData", JSON.stringify(result));
+
+        this.props.history.push('/')
+      });
+  };
 
 
-  // }));
-
-  // const defaultProps = {
-  //   bgcolor: 'background.paper',
-  //   borderColor: 'text.primary',
-  //   m: 1,
-  //   border: 1,
-  //   style: { width: '6rem', height: '2rem' },
-  // }
-
-  // export default function SignInSide() {
-  //   const classes = useStyles();
-  //   const [name, setName] = useState("");
-  //   const [email, setEmail] = useState("");
-  //   const [url, setUrl] = useState("");
-
-  //   const responseGoogle = response => {
-  //     setName(response.profileObj.name);
-  //     setEmail(response.profileObj.email);
-  //     setUrl(response.profileObj.url);
-  //   }
-
-  //   const { inputs, handleInputChange, handleSubmit, errors } = useForm({ Name: '', email: '', password: '', confirmpassword: '' }, validate);
   render() {
+
+    const responseGoogle = (response) => {
+      console.log(response);
+      var res = response.profileObj;
+      console.log(res);
+      debugger;
+      this.signup(response);
+
+    }
     return (
       <Grid container component="main" style={{ marginTop: 86, height: '100vh' }}>
         <CssBaseline />
@@ -213,15 +192,14 @@ export default class SignUp extends React.Component {
               width: '300px'
             }} noValidate onSubmit={this.handleSubmit}>
 
-              <h2 style={{ color: '#004170', marginLeft: 0 }}>Sign <span style={{ color: "black" }}>Up</span> </h2>
+              <h2 style={{ color: '#004170', marginLeft: 70 }}>Sign <span style={{ color: "black" }}>Up</span> </h2>
               <div>
+
                 <GoogleLogin
                   clientId="327370878003-pqgo77iu9i703k6q1ad4hitrrtk08hag.apps.googleusercontent.com"
-                  buttonText="Signup with google"
-                  // onSuccess={responseGoogle}
-                  // onFailure={responseGoogle}
-                  cookiePolicy={'single_host_origin'}
-                />
+                  buttonText="Login with Google"
+                  onSuccess={responseGoogle}
+                  onFailure={responseGoogle} ></GoogleLogin>
                 <br />
                 <br />
                 <b style={{ color: "black" }}>OR</b>
@@ -336,6 +314,7 @@ export default class SignUp extends React.Component {
                 <div className="text-danger">{this.state.errors.confirm_password}</div>
               </div>
               <FormControlLabel
+                require
                 control={<Checkbox value="remember" color="primary" />}
                 label="I agree to the terms and conditions"
                 style={{ color: "#004170" }}
@@ -350,7 +329,7 @@ export default class SignUp extends React.Component {
             </Button>
               </Box>
               <Grid container>
-                <Grid item style={{ marginLeft: 30 }}>
+                <Grid item style={{ marginLeft: 30, marginTop: 20 }}>
 
                   <b>Already have an account? <Link href="/login">Login</Link></b>
                 </Grid>

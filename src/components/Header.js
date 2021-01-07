@@ -24,7 +24,7 @@ class Header extends React.Component {
   }
 
   render() {
-    const bgPink = { backgroundColor: '#DBE0F1', marginBottom: 50 }
+    const bgPink = { backgroundColor: '#FCFFE9', marginBottom: 50 }
 
     return (
       <div>
@@ -47,48 +47,12 @@ class Header extends React.Component {
               <MDBNavbarToggler onClick={this.onClick} />
               <MDBCollapse isOpen={this.state.collapse} navbar>
                 <MDBNavbarNav right>
-                  {/* <Reactstrap.Nav.Link ><a href="/aboutus" style={{ color: "black" }}>About Us </a></Reactstrap.Nav.Link>
-
-
-                  <Reactstrap.Nav.Item>
-
-                    <UncontrolledDropdown nav inNavbar>
-                      <DropdownToggle nav caret style={{ color: "black" }}>
-                        Options
-                     </DropdownToggle>
-                      <DropdownMenu right>
-                        <DropdownItem>
-                          Option 1
-                       </DropdownItem>
-                        <DropdownItem>
-                          Option 2
-                       </DropdownItem>
-                        <DropdownItem divider />
-                        <DropdownItem>
-                          Reset
-                       </DropdownItem>
-                      </DropdownMenu>
-                    </UncontrolledDropdown>
-                  </Reactstrap.Nav.Item>
-                  <Reactstrap.Nav.Item>
-                    <Reactstrap.Nav.Link style={{ color: "black" }}>Services</Reactstrap.Nav.Link>
-                  </Reactstrap.Nav.Item>
-                  <Reactstrap.Nav.Item>
-                    <Reactstrap.Nav.Link eventKey="link-3" style={{ color: "black" }}>
-                      Support
-             </Reactstrap.Nav.Link>
-                  </Reactstrap.Nav.Item>
-                  <Reactstrap.Nav.Item>
-                    <Reactstrap.Nav.Link>
-                      Log In
-          </Reactstrap.Nav.Link>
-                  </Reactstrap.Nav.Item> */}
                   <Nav >
                     <NavLink href="/aboutus" style={{ color: "black" }}>About Us</NavLink>
 
                     <UncontrolledDropdown nav inNavbar>
                       <DropdownToggle nav caret style={{ color: "black" }}>
-                        Options
+                        Products
               </DropdownToggle>
                       <DropdownMenu left>
                         <DropdownItem>
@@ -96,10 +60,7 @@ class Header extends React.Component {
                         <DropdownItem>
                           product 2
                 </DropdownItem>
-                        <DropdownItem divider />
-                        <DropdownItem>
-                          product 3
-                </DropdownItem>
+
                       </DropdownMenu>
                     </UncontrolledDropdown>
                     <NavLink href="/service" style={{ color: "black" }}>Services</NavLink>

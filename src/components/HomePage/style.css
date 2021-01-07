@@ -1,11 +1,11 @@
 .card{
-    width: 100%;
+    width: 90%;
     height: 200px;
     background-color:#5521;
     color:black;
     font-size: 30px;
     margin: 0 20px;
-    display: flex;
+    display: inline-flexbox;
     justify-content: center;
     align-items: center
 }
@@ -24,7 +24,7 @@ a.social:hover{
   transform: translate(-2px);
   
 }
-a.youtube:hover
+/* a.youtube:hover
 {
   color: red;
 }
@@ -39,7 +39,7 @@ a.instagram:hover
 }
 a.twitter:hover{
   color: #1DA1F2;
-}
+} */
 
 a.youtube
 {

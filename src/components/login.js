@@ -6,7 +6,10 @@ import Link from '@material-ui/core/Link';
 import Paper from '@material-ui/core/Paper';
 import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Typography from '@material-ui/core/Typography';
+import Checkbox from '@material-ui/core/Checkbox';
+
 import { makeStyles } from '@material-ui/core/styles';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import LockRoundedIcon from '@material-ui/icons/LockRounded';
@@ -18,10 +21,12 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import EmailIcon from '@material-ui/icons/Email';
-
-
-
-
+import { useForm } from "react-hook-form";
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as Yup from 'yup';
+// import GoogleLogin from 'react-google-login';
+import axios from 'axios'
+import Modal from '..//components/LoginPages/forgetPassword';
 
 
 function LogIn() {
@@ -89,7 +94,9 @@ const defaultProps = {
   style: { width: '6rem', height: '2rem' },
 }
 
-export default function LogINSide() {
+
+
+export default function LogInSide() {
   const classes = useStyles();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -110,7 +117,28 @@ export default function LogINSide() {
   const handleClose = () => {
     setOpen(false);
   };
+  const validationSchema = Yup.object().shape({
 
+    Name: Yup.string()
+      .required(' Name is required'),
+
+    password: Yup.string()
+      .min(8, 'Password must be at least 8 characters')
+      .required('Password is required'),
+
+    acceptTerms: Yup.bool()
+      .oneOf([true], 'Accept Ts & Cs is required')
+  });
+
+  // functions to build form returned by useForm() hook
+  const { register, handleSubmit, reset, errors } = useForm({
+    resolver: yupResolver(validationSchema)
+  });
+
+  function onSubmit(data) {
+    // display form data on success
+    alert('SUCCESS!! :-)\n\n' + JSON.stringify(data, null, 4));
+  }
 
 
   return (
@@ -135,61 +163,70 @@ export default function LogINSide() {
       </Grid>
       <Grid item xs={12} sm={6} md={6} align="center" marginTop="10%" component={Paper}>
         <div className={classes.paper} style={{ align: "center", marginLeft: 60 }}>
-          <form className={classes.form} noValidate>
 
-            <h2 style={{ color: '#004170', marginBottom: 10 }}>Sign <span className={classes.black}>In</span> </h2>
 
+          <h2 style={{ color: '#004170', marginBottom: 10 }}>Sign <span className={classes.black}>In</span> </h2>
+
+          <div>
+            <br />
+            <GoogleLogin
+              clientId="327370878003-pqgo77iu9i703k6q1ad4hitrrtk08hag.apps.googleusercontent.com"
+              buttonText="Sign In with Google"
+              onSuccess={responseGoogle}
+              onFailure={responseGoogle}
+              cookiePolicy={'single_host_origin'}
+            />
+            <br />
+            <br />
+            <b style={{ color: "black" }}>OR</b>
+          </div>
+          <form className={classes.form} onSubmit={handleSubmit(onSubmit)} onReset={reset}>
             <div>
-              <br />
-              <GoogleLogin
-                clientId="327370878003-pqgo77iu9i703k6q1ad4hitrrtk08hag.apps.googleusercontent.com"
-                buttonText="SignIN with google"
-                onSuccess={responseGoogle}
-                onFailure={responseGoogle}
-                cookiePolicy={'single_host_origin'}
+              <TextField
+                name="Name"
+                type="text"
+                ref={register}
+                className={`form-control ${errors.Name ? 'is-invalid' : ''}`}
+                style={{ marginTop: 30 }}
+                label="UserName"
+                // placeholder="UserName"
+                InputProps={{
+                  startAdornment: (
+                    <InputAdornment position="start">
+                      <AccountCircle />
+                    </InputAdornment>
+                  )
+                }} className={classes.margin}
+                id="input-with-icon-textfield"
+
               />
-              <br />
-              <br />
-              <b style={{ color: "black" }}>OR</b>
+              <div className="invalid-feedback">{errors.Name?.message}</div>
             </div>
-
-            <TextField
-              style={{ marginTop: 30 }}
-              label="UserName"
-              // placeholder="UserName"
-              InputProps={{
-                startAdornment: (
-                  <InputAdornment position="start">
-                    <AccountCircle />
-                  </InputAdornment>
-                )
-              }} className={classes.margin}
-              id="input-with-icon-textfield"
-
-            />
             <br />
             <br />
-            <TextField
-              style={{ marginTop: 10 }}
-
-              className={classes.margin}
-              id="input-with-icon-textfield"
-              label="Password"
-              // placeholder="Password"
-              border-color="#004170"
-              InputProps={{
-                startAdornment: (
-                  <InputAdornment position="start">
-                    <LockRoundedIcon />
-                  </InputAdornment>
-                )
-              }}
-            />
-
+            <div>
+              <TextField
+                style={{ marginTop: 10 }}
+                className={classes.margin}
+                id="input-with-icon-textfield"
+                label="Password"
+                name="password" type="password" ref={register} className={`form-control ${errors.password ? 'is-invalid' : ''}`}
+                // placeholder="Password"
+                border-color="#004170"
+                InputProps={{
+                  startAdornment: (
+                    <InputAdornment position="start">
+                      <LockRoundedIcon />
+                    </InputAdornment>
+                  )
+                }}
+              />
+              <div className="invalid-feedback">{errors.password?.message}</div>
+            </div>
             <br />
             <Box mx="auto" bgcolor="background.paper" p={1}>
               <Button mx="auto" {...defaultProps} borderRadius={55} variant="contained" color="primary" aria-label="contained primary button group"
-                type="sumbit"
+                type="submit"
                 className={classes.submit}
               >
                 Sign In
@@ -235,7 +272,7 @@ export default function LogINSide() {
                 </Dialog>
 
               </Grid>
-              <Grid item xs="7">
+              <Grid item xs="6">
 
                 <Link href="/SignUp">New User</Link>
 
@@ -251,3 +288,7 @@ export default function LogINSide() {
     </Grid>
   );
 }
+
+
+
+

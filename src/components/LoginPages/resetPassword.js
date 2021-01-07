@@ -48,8 +48,6 @@ export default class ResetPassword extends React.Component {
       console.log(this.state);
 
       let input = {};
-      input["name"] = "";
-      input["email"] = "";
       input["password"] = "";
       input["confirm_password"] = "";
       this.setState({ input: input });
@@ -70,6 +68,14 @@ export default class ResetPassword extends React.Component {
       errors["confirm_password"] = "Please enter your confirm password.";
     }
 
+    if (typeof input["password"] !== "undefined") {
+
+      var pattern1 = new RegExp("^(((?=.*[a-z])(?=.*[A-Z]))|((?=.*[a-z])(?=.*[0-9]))|((?=.*[A-Z])(?=.*[0-9])))(?=.{6,})");
+      if (!pattern1.test(input["password"])) {
+        isValid = false;
+        errors["password"] = "password should contain one uppercase one lowercase one special character and one integer";
+      }
+    }
     if (typeof input["password"] !== "undefined" && typeof input["confirm_password"] !== "undefined") {
 
       if (input["password"] != input["confirm_password"]) {
