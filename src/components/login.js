@@ -185,7 +185,7 @@ export default function LogInSide() {
                 type="text"
                 ref={register}
                 className={`form-control ${errors.Name ? 'is-invalid' : ''}`}
-                style={{ marginTop: 30 }}
+                style={{ marginTop: 30, marginLeft: 30 }}
                 label="UserName"
                 // placeholder="UserName"
                 InputProps={{
@@ -194,7 +194,7 @@ export default function LogInSide() {
                       <AccountCircle />
                     </InputAdornment>
                   )
-                }} className={classes.margin}
+                }}
                 id="input-with-icon-textfield"
 
               />
@@ -204,7 +204,7 @@ export default function LogInSide() {
             <br />
             <div>
               <TextField
-                style={{ marginTop: 10 }}
+                style={{ marginTop: 20, marginLeft: 30 }}
                 className={classes.margin}
                 id="input-with-icon-textfield"
                 label="Password"
