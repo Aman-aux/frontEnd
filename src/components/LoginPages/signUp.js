@@ -54,6 +54,7 @@ export default class SignUp extends React.Component {
       input["email"] = "";
       input["password"] = "";
       input["confirm_password"] = "";
+      input["organisation"] = "";
       this.setState({ input: input });
 
       alert('Demo Form is submited');
@@ -69,7 +70,11 @@ export default class SignUp extends React.Component {
 
       isValid = false;
       errors["name"] = "Please enter your name.";
+    }
+    if (!input["organisation"]) {
 
+      isValid = false;
+      errors["organisation"] = "Please enter your organisation.";
     }
     if (!input["email"]) {
       isValid = false;
@@ -153,7 +158,7 @@ export default class SignUp extends React.Component {
 
     }
     return (
-      <Grid container component="main" style={{ marginTop: 86, height: '100vh' }}>
+      <Grid container component="main" style={{ marginTop: 86 }}>
         <CssBaseline />
         <Grid item xs={12} sm={6} md={6} style={{
           backgroundRepeat: 'no-repeat',
@@ -197,13 +202,13 @@ export default class SignUp extends React.Component {
 
                 <GoogleLogin
                   clientId="327370878003-pqgo77iu9i703k6q1ad4hitrrtk08hag.apps.googleusercontent.com"
-                  buttonText="Login with Google"
+                  buttonText="Sign Up with Google"
                   onSuccess={responseGoogle}
                   onFailure={responseGoogle} ></GoogleLogin>
                 <br />
                 <br />
                 <b style={{ color: "black" }}>OR</b>
-                <h5 style={{ color: "#004170" }}>Register & apply with your email</h5>
+                <h6 style={{ color: "#000000" }}>Register & apply with your email</h6>
               </div>
               <RadioGroup row aria-label="position">
                 <FormControlLabel value="Individual" control={<Radio color="primary" />} label="Individual" />
@@ -233,7 +238,8 @@ export default class SignUp extends React.Component {
               <br />
               <div>
                 <TextField
-                  placeholder="Organisation"
+                  placeholder="organisation"
+                  onChange={this.handleChange}
                   InputProps={{
                     startAdornment: (
                       <InputAdornment position="start">
@@ -243,6 +249,7 @@ export default class SignUp extends React.Component {
                   }}
 
                 />
+                <div className="text-danger">{this.state.errors.organisation}</div>
               </div>
               <br />
               <br />

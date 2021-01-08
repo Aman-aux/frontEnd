@@ -43,9 +43,7 @@ function LogIn() {
 }
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    height: '100vh',
-  },
+
 
   left: {
     backgroundRepeat: 'no-repeat',
@@ -274,7 +272,7 @@ export default function LogInSide() {
               </Grid>
               <Grid item xs="6">
 
-                <Link href="/SignUp">New User</Link>
+                <Link href="/sign-up">New User</Link>
 
               </Grid>
             </Grid>

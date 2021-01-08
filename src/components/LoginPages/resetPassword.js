@@ -158,7 +158,7 @@ export default class ResetPassword extends React.Component {
   //   const { inputs, handleInputChange, handleSubmit, errors } = useForm({ Name: '', email: '', password: '', confirmpassword: '' }, validate);
   render() {
     return (
-      <Grid container component="main" style={{ marginTop: 86, height: '100vh' }}>
+      <Grid container component="main" style={{ marginTop: 86 }}>
         <CssBaseline />
         <Grid item xs={12} sm={6} md={6} style={{
           backgroundRepeat: 'no-repeat',

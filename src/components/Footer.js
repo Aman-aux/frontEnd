@@ -32,23 +32,20 @@ function Footer(params) {
 
   return (
     <>
-
-
-
-
-      <div class="container" style={{ color: "#00000" }} ></div>
-      <footer>
-        <h2 class="text-white" style={{ marginLeft: 50, marginTop: 2 }}> <a href="/" class="text-white">aUXtomate Technologies</a> </h2>
+      <footer  >
+        <div >
+          <h2 style={{ marginLeft: 50, marginTop: 2, paddingTop: 20 }}> <a href="/" class="text-white" >aUXtomate Technologies</a> </h2>
+        </div>
         <section class="ft-main">
 
           <div class="ft-main-item">
 
             <ul>
-              <li><a href="/TermsCondition" class="text-white"><b>Terms and Conditions</b></a></li>
-              <li><a href="/PrivacyPolicy" class="text-white"><b>Privacy Policy</b></a></li>
-              <li><a href="/Consultaion" class="text-white"><b>Consultation</b></a></li>
-              <li><a href="/FAQ" class="text-white"><b>FAQ</b></a></li>
-              <li><a href="/sitemap" class="text-white"><b>Sitemap</b></a></li>
+              <li><a href="/terms-and-condiition" class="text-white"><b>Terms and Conditions</b></a></li>
+              <li><a href="/privacy-policy" class="text-white"><b>Privacy Policy</b></a></li>
+              <li><a href="/consultation" class="text-white"><b>Consultation</b></a></li>
+              <li><a href="/faq" class="text-white"><b>FAQ</b></a></li>
+              <li><a href="/site-map" class="text-white"><b>Sitemap</b></a></li>
             </ul>
           </div>
           <div class="ft-main-item">
@@ -123,7 +120,8 @@ function Footer(params) {
           <ul class="ft-legal-list" right>
             <a class="text-white"> © 2020 aUXtomate Technologies. All Right Reserved. Design and Developed by aUXtomate Technologies.
    </a>
-            <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+
+            <li style={{ marginLeft: 175 }}><a href="#"><i class="fab fa-facebook"></i></a></li>
             <li><a href="#"><i class="fab fa-twitter"></i></a></li>
             <li><a href="#"><i class="fab fa-instagram"></i></a></li>
             <li><a href="#"><i class="fab fa-github"></i></a></li>

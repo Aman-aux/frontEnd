@@ -14,6 +14,7 @@ import EmailIcon from '@material-ui/icons/Email';
 import Iframe from 'react-iframe';
 import '../HomePage/style.css'
 import { useMediaQuery } from 'react-responsive'
+import TextareaAutosize from 'react-autosize-textarea';
 
 
 
@@ -78,7 +79,6 @@ function HomePage(params) {
     },
 
 
-
   }));
 
 
@@ -120,45 +120,44 @@ solutions!!
 
       </div>
       <br />
-      <div id="About Us" style={{ backgroundColor: "#DBE0F1", paddingBlockEnd: 15, paddingBlockStart: 15, paddingLeft: 100, paddingRight: 100 }}>
 
-        <h1 align="center" style={{ color: "#004170" }}>About Us</h1>
+      <div id="About Us" style={{ backgroundColor: "#DBE0F1", paddingBottom: 20 }}>
 
-        <div style={{ marginLeft: 125 }}>
-          <h2>Vision</h2>
-
+        <h1 align="center" style={{ color: "#004170", marginBottom: 20 }}>About Us</h1>
+        <div style={{ marginBottom: 20, marginLeft: 50, marginRight: 50 }}>
           <br />
           <div>
-            <div className="float-right order-1 order-lg-2  ">
-              <img style={{ marginRight: 100, paddingLeft: 30 }} className="float-right order-1 order-lg-2  " height="200" width="200" src="/images/vision.jpg" alt="vision" ></img>
+            <div className="float-right">
+
+              <img className="float-right" height="200" width="200" src="/images/vision.jpg" alt="vision" ></img>
             </div>
             <div >
-              <p style={{ paddingRight: 400 }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt
+              <h2 style={{ marginTop: 20 }}>Vision</h2>
+              <p marginTop="10" >Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt
               ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
               in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
 sunt in culpa qui officia deserunt mollit anim id est laborum.</p>{" "}
 
 
             </div>
-            <br />
-            <div>
+          </div>
+          <br />
+          <div>
 
-              <b> <h2 style={{ marginTop: 10, display: "inline-flex", paddingLeft: 20 }}>Mission </h2></b>
+            <b> <h2 style={{ marginTop: 10, display: "inline-flex" }}>Mission </h2></b>
 
+            <img className="float-left" src="/images/mission.jpg" alt="mission" height="150" width="300" style={{ paddingRight: 100 }}  ></img>
 
-              <img className="float-left" src="/images/mission.jpg" alt="mission" height="150" width="300" style={{ paddingRight: 100 }}  ></img>
-
-              <div style={{ display: "-ms-flexbox", marginRight: 100, marginLeft: 20, }}>.Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-              exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
+            <div marginTop="10">.Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
               in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </div>
 
-            </div>
           </div>
 
         </div>
-
       </div>
+
       <div id="Our Characteristics" style={{ marginLeft: 100, marginRight: 100, marginTop: 17 }}>
         <h1 align="center" style={{ color: "004170" }}>Trusted by 300000+ Users</h1>
         <Carousel className="App" breakPoints={breakPoints}>
@@ -177,42 +176,38 @@ sunt in culpa qui officia deserunt mollit anim id est laborum.</p>{" "}
       <div id="Our Products" style={{ backgroundColor: "#DBE0F1", paddingBlock: 15, paddingLeft: 10, marginTop: 17, marginBottom: 10 }}>
         <h1 align="center" style={{ color: "#004170 " }}>Our Products</h1>
         <br />
-        <div style={{ marginLeft: 125 }}>
-          <h2>Workplace Covid Management Solution</h2>
-
+        <div style={{ marginBottom: 20, marginLeft: 50, marginRight: 50 }}>
           <br />
           <div>
-            <div className="float-right order-1 order-lg-2  ">
-              <img style={{ marginRight: 100 }} className="float-right order-1 order-lg-2  " src="/images/comp.PNG" alt="" ></img>
+            <div className="float-right">
+              <img className="float-right" height="200" width="200" src="/images/vision.jpg" alt="vision" ></img>
             </div>
-            <div>
-              <p style={{ paddingRight: 100 }}>Our Workplace COVID Management solution is designed to equip companies in making informeddata driven decisions and initiate preventive
-              measures around their workforce and operations in real time for a post corona world.Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt
+            <div >
+              <h2>Workplace Covid Management Solution</h2>
+              <p marginTop="10" >Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt
               ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
               in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
 sunt in culpa qui officia deserunt mollit anim id est laborum.</p>{" "}
-
-              <Button backgroundColor="#004170">
+              <Button backgroundColor="#00417" style={{ marginTop: 10 }}>
                 know more    </Button>
+
+
             </div>
-            <br />
-            <div>
+          </div>
+          <br />
+          <div>
 
-              <b> <h2 style={{ marginTop: 10, display: "inline-flex", paddingLeft: 20 }}>Automated analysis of Web application </h2></b>
+            <b> <h2 style={{ marginTop: 10, display: "inline-flex" }}>Automated analysis of Web application </h2></b>
 
+            <img className="float-left" src="/images/mission.jpg" alt="mission" height="150" width="300" style={{ paddingRight: 100 }}  ></img>
 
-              <img className="float-left" src="/images/comp4.PNG" alt="" style={{ paddingRight: 100 }}  ></img>
+            <div marginTop="10">.Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
+              in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </div>
+            <Button backgroundColor="#00417" style={{ marginTop: 10 }}>
+              know more    </Button>
 
-              <div style={{ display: "-ms-flexbox", marginRight: 100, marginLeft: 20, }}>We misconceptions about what you do,
-              conducting research under time and budget constraints, deciding which problem to solve, briding the gap
-              between design and development.Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-              exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
-              in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
-              <Button backgroundcolor="#004170" style={{ marginTop: 10, marginBottom: 17 }} >
-                know more    </Button>
-            </div>
           </div>
 
         </div>
@@ -223,45 +218,42 @@ sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
         <div id="What we do" style={{ paddingBlock: 15, paddingLeft: 10 }}>
           <h1 align="center" >What we do?</h1>
           <br />
-          <div style={{ marginLeft: 125, marginTop: 10 }}>
-            <b> <h2>Custom software development </h2></b>
-
+          <div style={{ marginBottom: 20, marginLeft: 50, marginRight: 50 }}>
+            <br />
             <div>
-              <div>
-                <img className="float-right" style={{ marginRight: 100 }} src="/images/comp3.PNG" alt="" ></img>
+              <div className="float-right">
+                <img className="float-right" height="200" width="200" src="/images/vision.jpg" alt="vision" ></img>
               </div>
-              <div>
-                <div style={{ display: "-ms-flexbox" }}>We design, create, deploying and maintaining
-                software for a specific set of users, functions or organization.Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
+              <div >
+                <h2>Custom software development</h2>
+                <p marginTop="10" >Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt
+                ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
                 in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
-
+sunt in culpa qui officia deserunt mollit anim id est laborum.</p>{" "}
                 <Button backgroundColor="#00417" style={{ marginTop: 10 }}>
                   know more    </Button>
+
+
               </div>
+            </div>
+            <br />
+            <div>
 
-              <div>
+              <b> <h2 style={{ marginTop: 10, display: "inline-flex" }}>UX Design Solution</h2></b>
 
-                <b> <h2 style={{ marginTop: 10, display: "inline-flex" }}>UX Design Solution </h2></b>
+              <img className="float-left" src="/images/mission.jpg" alt="mission" height="150" width="300" style={{ paddingRight: 100 }}  ></img>
 
+              <div marginTop="10">.Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+              exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
+              in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </div>
+              <Button backgroundColor="#00417" style={{ marginTop: 10 }}>
+                know more    </Button>
 
-                <img className="float-left" src="/images/comp4.PNG" alt="" ></img>
-
-                <div style={{ display: "-ms-flexbox", marginRight: 100 }}>We misconceptions about what you do,
-                conducting research under time and budget constraints, deciding which problem to solve, briding the gap
-                between design and development.Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
-                in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
-                <Button backgroundcolor="#004170" style={{ marginTop: 10, marginBottom: 17 }} >
-                  know more    </Button>
-              </div>
             </div>
 
           </div>
+
         </div>
 
       </div>
@@ -286,9 +278,9 @@ sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
       <Reactstrap.CardGroup>
         <card className="block-example border border-blue" style={{ Width: "50%", marginBottom: 17, marginLeft: 25 }}>
           <CardContent >
-            <div className="Iframerwd">
+            <div class="responsive">
               <Iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3805.1483016753223!2d78.4072534143839!3d17.500432704142323!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb91c23427e381%3A0x7ec826b06addf631!2s2-22-114%2F1%2C%20Navodaya%20Colony%2C%20Kukatpally%2C%20Hyderabad%2C%20Telangana%20500072!5e0!3m2!1sen!2sin!4v1608294752141!5m2!1sen!2sin"
-                className="responsiveIframe" width="600" height="500" aria-hidden="false" tabindex="0" />
+                class="embed-responsive-item" allowfullscreen width="600" height="500" aria-hidden="false" tabindex="0" />
             </div>
           </CardContent>
         </card>
@@ -309,6 +301,7 @@ sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
                   ),
                 }}
               />
+
               <TextField
 
                 className={classes.margin}
@@ -329,8 +322,6 @@ sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
 
 
                 label="Email Address"
-
-                style={{ width: 500 }}
                 margin="normal"
                 InputLabelProps={{
                   shrink: true,
@@ -350,10 +341,10 @@ sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
 
                 id="outlined-full-width"
                 label="Messages"
-                marginLeft="100"
-                marginRight="100"
+                // marginLeft="100"
+                // marginRight="100"
                 margin="normal"
-                style={{ width: 500 }}
+                style={{ width: "auto" }}
                 InputLabelProps={{
                   shrink: true,
                 }}
@@ -375,11 +366,10 @@ sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
           </div>
         </card>
       </Reactstrap.CardGroup>
-      <div align="center">
-        <div class="card text-center shadow-lg p-4 mb-2 bg-white rounded" style={{ width: "50rem" }}>
+      <div align="center" paddingBottom="50">
+        <div class="card text-center shadow-lg   bg-white rounded" style={{ justifyContent: "center" }}>
 
           <div className="card-body wrap">
-
             <h3> <b className="card-text" style={{ color: "#004170" }}>Do you have any design idea? <br />
 Push here to get started!!</b></h3>
             <a href="#" class="btn btn-primary">Get Started</a>
