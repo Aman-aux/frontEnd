@@ -24,7 +24,7 @@ class Header extends React.Component {
   }
 
   render() {
-    const bgPink = { backgroundColor: '#004170', marginBottom: 50 }
+    const bgPink = { backgroundColor: '#2394e4', marginBottom: 50 }
 
     return (
       <div>
@@ -49,7 +49,7 @@ class Header extends React.Component {
                 <MDBCollapse isOpen={this.state.collapse} navbar>
                   <MDBNavbarNav right>
                     <Nav >
-                      <NavLink href="/aboutus" style={{ color: "black" }}>About Us</NavLink>
+                      <NavLink href="/about-us" style={{ color: "black" }}>About Us</NavLink>
 
                       <UncontrolledDropdown nav inNavbar>
                         <DropdownToggle nav caret style={{ color: "black" }}>

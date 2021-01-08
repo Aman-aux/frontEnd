@@ -103,10 +103,9 @@ function HomePage(params) {
     <>
 
       <div style={{ marginLeft: 200, marginRight: 100, marginTop: 90 }}>
-        <h1>Software</h1>
-        <br />
-        <h1>development and UI</h1>
-        <br />
+        <h1>Software
+        development and UI</h1>
+
         <h1>Design Solutions</h1>
         <br />
        Perform software Development services and UX design
@@ -180,7 +179,7 @@ sunt in culpa qui officia deserunt mollit anim id est laborum.</p>{" "}
           <br />
           <div>
             <div className="float-right">
-              <img className="float-right" height="200" width="200" src="/images/vision.jpg" alt="vision" ></img>
+              <img className="float-right" height="200" width="200" src="/images/comp.png" alt="vision" ></img>
             </div>
             <div >
               <h2>Workplace Covid Management Solution</h2>
@@ -199,7 +198,7 @@ sunt in culpa qui officia deserunt mollit anim id est laborum.</p>{" "}
 
             <b> <h2 style={{ marginTop: 10, display: "inline-flex" }}>Automated analysis of Web application </h2></b>
 
-            <img className="float-left" src="/images/mission.jpg" alt="mission" height="150" width="300" style={{ paddingRight: 100 }}  ></img>
+            <img className="float-left" src="/images/comp2.png" alt="mission" height="150" width="300" style={{ paddingRight: 100 }}  ></img>
 
             <div marginTop="10">.Lorem ipsum dolor sit amet, consectetur adipiscing elit,
             sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
@@ -222,7 +221,7 @@ sunt in culpa qui officia deserunt mollit anim id est laborum.</p>{" "}
             <br />
             <div>
               <div className="float-right">
-                <img className="float-right" height="200" width="200" src="/images/vision.jpg" alt="vision" ></img>
+                <img className="float-right" height="200" width="200" src="/images/comp3.png" alt="vision" ></img>
               </div>
               <div >
                 <h2>Custom software development</h2>
@@ -241,7 +240,7 @@ sunt in culpa qui officia deserunt mollit anim id est laborum.</p>{" "}
 
               <b> <h2 style={{ marginTop: 10, display: "inline-flex" }}>UX Design Solution</h2></b>
 
-              <img className="float-left" src="/images/mission.jpg" alt="mission" height="150" width="300" style={{ paddingRight: 100 }}  ></img>
+              <img className="float-left" src="/images/comp4.png" alt="mission" height="150" width="300" style={{ paddingRight: 100 }}  ></img>
 
               <div marginTop="10">.Lorem ipsum dolor sit amet, consectetur adipiscing elit,
               sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
@@ -278,6 +277,7 @@ sunt in culpa qui officia deserunt mollit anim id est laborum.</p>{" "}
       <Reactstrap.CardGroup>
         <card className="block-example border border-blue" style={{ Width: "50%", marginBottom: 17, marginLeft: 25 }}>
           <CardContent >
+
             <div class="responsive">
               <Iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3805.1483016753223!2d78.4072534143839!3d17.500432704142323!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb91c23427e381%3A0x7ec826b06addf631!2s2-22-114%2F1%2C%20Navodaya%20Colony%2C%20Kukatpally%2C%20Hyderabad%2C%20Telangana%20500072!5e0!3m2!1sen!2sin!4v1608294752141!5m2!1sen!2sin"
                 class="embed-responsive-item" allowfullscreen width="600" height="500" aria-hidden="false" tabindex="0" />
@@ -366,13 +366,14 @@ sunt in culpa qui officia deserunt mollit anim id est laborum.</p>{" "}
           </div>
         </card>
       </Reactstrap.CardGroup>
-      <div align="center" paddingBottom="50">
+      <div align="center" style={{ paddingBottom: "50" }}>
         <div class="card text-center shadow-lg   bg-white rounded" style={{ justifyContent: "center" }}>
 
-          <div className="card-body wrap">
+          <div className="card-body " style={{ paddingBottom: 50 }}>
             <h3> <b className="card-text" style={{ color: "#004170" }}>Do you have any design idea? <br />
 Push here to get started!!</b></h3>
-            <a href="#" class="btn btn-primary">Get Started</a>
+            <Button backgroundColor="#00417" style={{ marginTop: 10 }}>
+              Get Started    </Button>
           </div>
         </div >
       </div>
