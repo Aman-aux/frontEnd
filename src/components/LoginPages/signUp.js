@@ -3,9 +3,7 @@ import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
-// import Checkbox from '@material-ui/core/Checkbox';
-import { Checkbox } from '@progress/kendo-react-inputs';
-
+import Checkbox from '@material-ui/core/Checkbox';
 import Link from '@material-ui/core/Link';
 import Paper from '@material-ui/core/Paper';
 import Box from '@material-ui/core/Box';
@@ -150,12 +148,6 @@ export default class SignUp extends React.Component {
 
         this.props.history.push('/')
       });
-    handleSubmit = (event) => {
-      event.preventDefault();
-      this.setState({ success: true });
-      setTimeout(() => { this.setState({ success: false }); }, 3000);
-    }
-
   };
 
 
@@ -336,15 +328,13 @@ export default class SignUp extends React.Component {
 
                 <div className="text-danger">{this.state.errors.confirm_password}</div>
               </div>
-              <Checkbox
-                id="ch"
-                name="checkbox"
-                required={true}
-              >
-                <label className="k-checkbox-label" for="ch">
-                  By clicking <a href="#">Sign Up</a>, you agree to our <a href="#">Terms and Conditions</a>.
-                                            </label>
-              </Checkbox>
+              <FormControlLabel
+                require
+                control={<Checkbox value="remember" color="primary" />}
+                label="I agree to the terms and conditions"
+                style={{ color: "#004170" }}
+
+              />
               <Box mx="auto" bgcolor="background.paper">
                 <Button borderRadius={55} variant="contained" color="primary"
                   type="sumbit"
