@@ -41,30 +41,30 @@ function Footer(params) {
           <div class="ft-main-item">
 
             <ul>
-              <li><a href="/terms-and-condiition" class="text-white"><b>Terms and Conditions</b></a></li>
-              <li><a href="/privacy-policy" class="text-white"><b>Privacy Policy</b></a></li>
-              <li><a href="/consultation" class="text-white"><b>Consultation</b></a></li>
-              <li><a href="/faq" class="text-white"><b>FAQ</b></a></li>
-              <li><a href="/site-map" class="text-white"><b>Sitemap</b></a></li>
+              <li><a href="/terms-and-condiition" class="text-white">Terms and Conditions</a></li>
+              <li><a href="/privacy-policy" class="text-white">Privacy Policy</a></li>
+              <li><a href="/consultation" class="text-white">Consultation</a></li>
+              <li><a href="/faq" class="text-white">FAQ</a></li>
+              <li><a href="/site-map" class="text-white">Sitemap</a></li>
             </ul>
           </div>
           <div class="ft-main-item">
 
             <ul>
               <li>
-                <Link to="About Us" class="text-white " marginTop="10"  ><b>About US</b></Link>
+                <Link to="About Us" class="text-white " marginTop="10"  >About US</Link>
               </li>
               <li>
-                <Link to="Our Characteristics" class="text-white"><b>Our Characteristics</b></Link>
+                <Link to="Our Characteristics" class="text-white">Our Characteristics</Link>
               </li>
               <li>
-                <Link to="Our Products" class="text-white"><b>Our Products</b></Link>
+                <Link to="Our Products" class="text-white">Our Products</Link>
               </li>
               <li>
-                <Link to="What we do" class="text-white"><b>What we do?</b></Link>
+                <Link to="What we do" class="text-white">What we do?</Link>
               </li>
               <li>
-                <Link to="Our Clients" class="text-white"><b>Our Clients</b></Link>
+                <Link to="Our Clients" class="text-white">Our Clients</Link>
               </li>
 
             </ul>
@@ -73,32 +73,33 @@ function Footer(params) {
 
             <ul>
               <li class="text-white">
-                <b>
-                  <FontAwesomeIcon icon={faMapMarkerAlt} style={{ marginRight: 5 }} />
+
+                <FontAwesomeIcon icon={faMapMarkerAlt} style={{ marginRight: 5 }} />
 
                     aUXtomate Technologies pvt ltd
-        </b>
+
               </li>
 
 
-              <li class="text-white" >
-                <b style={{ marginLeft: 19 }}> F-909, 2/22/114/C,</b>
+              <li class="text-white" style={{ marginLeft: 19 }} >
+                F-909, 2/22/114/C,
               </li>
-              <li class="text-white">
-                <b style={{ marginLeft: 19 }}>  Navodaya colony, Kukatpally,</b>
+              <li class="text-white" style={{ marginLeft: 19 }}>
+                Navodaya colony, Kukatpally,
               </li>
-              <li class="text-white">
-                <b style={{ marginLeft: 19 }}>  Hyderabad-500072</b>
-              </li>
-              <li class="text-white">
-                <FontAwesomeIcon icon={faPhone} />
-
-                <b> 96260XXXXX</b>
+              <li class="text-white" style={{ marginLeft: 19 }}>
+                Hyderabad-500072
               </li>
 
+
               <li class="text-white">
-                <FontAwesomeIcon icon={faEnvelopeSquare} style={{ marginRight: 8 }} />
-                <b>info@auxtomate.com</b></li>
+                <FontAwesomeIcon icon={faEnvelopeSquare} style={{ marginRight: 5 }} />
+                info@auxtomate.com</li>
+              <li class="text-white">
+                <FontAwesomeIcon icon={faPhone} style={{ marginRight: 4 }} />
+
+                 96260XXXXX
+              </li>
             </ul>
           </div>
           <div class="ft-main-item">
@@ -121,7 +122,7 @@ function Footer(params) {
             <a class="text-white"> © 2020 aUXtomate Technologies. All Right Reserved. Design and Developed by aUXtomate Technologies.
    </a>
 
-            <li style={{ marginLeft: 175 }}><a href="#"><i class="fab fa-facebook"></i></a></li>
+            <li style={{ marginRight: 230 }}><a href="#"><i class="fab fa-facebook"></i></a></li>
             <li><a href="#"><i class="fab fa-twitter"></i></a></li>
             <li><a href="#"><i class="fab fa-instagram"></i></a></li>
             <li><a href="#"><i class="fab fa-github"></i></a></li>

@@ -23,7 +23,7 @@ import GoogleLogin from 'react-google-login';
 import axios from 'axios'
 
 
-export default class SignUp extends React.Component {
+export default class signUp extends React.Component {
   constructor() {
     super();
     this.state = {

@@ -22,8 +22,9 @@ import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import EmailIcon from '@material-ui/icons/Email';
 import { useForm } from "react-hook-form";
-import { yupResolver } from '@hookform/resolvers/yup';
-import * as Yup from 'yup';
+import { useFormik } from "formik";
+import * as Yup from "yup";
+
 // import GoogleLogin from 'react-google-login';
 import axios from 'axios'
 import Modal from '..//components/LoginPages/forgetPassword';
@@ -115,30 +116,32 @@ export default function LogInSide() {
   const handleClose = () => {
     setOpen(false);
   };
-  const validationSchema = Yup.object().shape({
 
-    Name: Yup.string()
-      .required(' Name is required'),
+  const formik = useFormik({
+    initialValues: {
+      Name: "",
+      email: "",
+      password: "",
+    },
 
-    password: Yup.string()
-      .min(8, 'Password must be at least 8 characters')
-      .required('Password is required'),
+    validationSchema: Yup.object({
+      Name: Yup.string()
+        .min(2, "Mininum 2 characters")
+        .max(25, "Maximum 25 characters")
+        .required("Required!"),
+      email: Yup.string()
+        .email("Invalid email format")
+        .required("Required!"),
 
-    acceptTerms: Yup.bool()
-      .oneOf([true], 'Accept Ts & Cs is required')
+      password: Yup.string()
+        .min(8, "Minimum 8 characters")
+        .required("Required!"),
+
+    }),
+    onSubmit: values => {
+      alert(JSON.stringify(values, null, 2));
+    }
   });
-
-  // functions to build form returned by useForm() hook
-  const { register, handleSubmit, reset, errors } = useForm({
-    resolver: yupResolver(validationSchema)
-  });
-
-  function onSubmit(data) {
-    // display form data on success
-    alert('SUCCESS!! :-)\n\n' + JSON.stringify(data, null, 4));
-  }
-
-
   return (
     <Grid container component="main" className={classes.root} style={{ marginTop: 86 }}>
       <CssBaseline />
@@ -178,13 +181,13 @@ export default function LogInSide() {
             <br />
             <b style={{ color: "black" }}>OR</b>
           </div>
-          <form className={classes.form} onSubmit={handleSubmit(onSubmit)} onReset={reset}>
+          <form className={classes.form} onSubmit={formik.handleSubmit}>
             <div>
               <TextField
                 name="Name"
                 type="text"
-                ref={register}
-                className={`form-control ${errors.Name ? 'is-invalid' : ''}`}
+                value={formik.values.Name}
+                onChange={formik.handleChange}
                 style={{ marginTop: 30, marginLeft: 30 }}
                 label="UserName"
                 // placeholder="UserName"
@@ -195,20 +198,22 @@ export default function LogInSide() {
                     </InputAdornment>
                   )
                 }}
-                id="input-with-icon-textfield"
 
               />
-              <div className="invalid-feedback">{errors.Name?.message}</div>
+              {formik.errors.Name && formik.touched.Name && (
+                <p>{formik.errors.Name}</p>
+              )}
             </div>
-            <br />
-            <br />
+
             <div>
               <TextField
                 style={{ marginTop: 20, marginLeft: 30 }}
                 className={classes.margin}
-                id="input-with-icon-textfield"
                 label="Password"
-                name="password" type="password" ref={register} className={`form-control ${errors.password ? 'is-invalid' : ''}`}
+                name="password"
+                type="password"
+                value={formik.values.password}
+                onChange={formik.handleChange}
                 // placeholder="Password"
                 border-color="#004170"
                 InputProps={{
@@ -219,8 +224,9 @@ export default function LogInSide() {
                   )
                 }}
               />
-              <div className="invalid-feedback">{errors.password?.message}</div>
-            </div>
+              {formik.errors.password && formik.touched.password && (
+                <p>{formik.errors.password}</p>
+              )}            </div>
             <br />
             <Box mx="auto" bgcolor="background.paper" p={1}>
               <Button mx="auto" {...defaultProps} borderRadius={55} variant="contained" color="primary" aria-label="contained primary button group"
@@ -241,30 +247,38 @@ export default function LogInSide() {
                     <DialogContentText>
                       Please enter your registered mail id
           </DialogContentText>
-                    <TextField
-                      autoFocus
-                      margin="dense"
-                      id="name"
-                      label="Email Address"
-                      type="email"
-                      fullWidth
-                      InputProps={{
-                        startAdornment: (
-                          <InputAdornment position="start">
-                            <EmailIcon />
-                          </InputAdornment>
-                        )
-                      }} className={classes.margin}
+                    <form onSubmit={formik.handleSubmit}>
 
-                    />
+                      <div>
+                        <TextField
+                          autoFocus
+                          margin="dense"
+                          type="email"
+                          name="email"
+                          value={formik.values.email}
+                          onChange={formik.handleChange}
+                          fullWidth
+                          InputProps={{
+                            startAdornment: (
+                              <InputAdornment position="start">
+                                <EmailIcon />
+                              </InputAdornment>
+                            )
+                          }} className={classes.margin}
 
+                        />
+                        {formik.errors.email && formik.touched.email && (
+                          <p>{formik.errors.email}</p>
+                        )}
+                      </div>
+                    </form>
                   </DialogContent>
                   <DialogActions>
                     <Button onClick={handleClose} color="primary">
                       Cancel
           </Button>
-                    <Button onClick={handleClose} color="primary">
-                      Reset Password
+                    <Button type="submit" onClick={handleClose} color="primary">
+                      Send
           </Button>
                   </DialogActions>
                 </Dialog>

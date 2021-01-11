@@ -1,7 +1,7 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import LogIn from "../components/login";
-import SignUp from "../components/LoginPages/signUp";
+import signUp from "../components/LoginPages/signUp";
 import ResetPassword from "../components/LoginPages/resetPassword";
 import HomePage from '../components/HomePage/homePage';
 import aboutus from '../components/HomePage/aboutUs';
@@ -17,7 +17,6 @@ import SiteMap from '../components/HomePage/Footerpages/Sitemap';
 import TermsCondition from '../components/HomePage/Footerpages/Terms and Conditions';
 
 
-
 function App() {
 
   return (
@@ -26,14 +25,13 @@ function App() {
       <Switch>
 
         <Route exact path="/" component={HomePage}></Route>
-        <Route exact path="/sign-up" component={SignUp}></Route>
+        <Route exact path="/sign-up" component={signUp}></Route>
         <Route exact path="/login" component={LogIn}></Route>
         <Route exact path="/reset-password" component={ResetPassword}></Route>
         <Route exact path="/homepage" component={HomePage}></Route>
         <Route exact path="/about-us" component={aboutus}></Route>
         <Route exact path="/service" component={Service}></Route>
         <Route exact path="/support" component={Support}></Route>
-
         <Route path="/consultation" component={Consultation} />
         <Route path="/faq" component={FAQ} />
         <Route path="/privacy-policy" component={PrivacyPolicy} />
