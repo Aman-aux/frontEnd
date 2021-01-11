@@ -261,14 +261,15 @@ sunt in culpa qui officia deserunt mollit anim id est laborum.</p>{" "}
 
         <h1 align="center" style={{ color: "004170" }}>Our Clients</h1>
         <Carousel className="App" breakPoints={breakPoints}>
-          <img src="/images/c1.PNG" />
-          <img src="/images/c2.PNG" />
-          <img src="/images/c3.PNG" />
-          <img src="/images/c4.PNG" />
-          <img src="/images/c5.PNG" />
-          <img src="/images/c6.PNG" />
-          <img src="/images/c7.PNG" />
-          <img src="/images/c8.PNG" />
+
+          <img src="/images/co1.png" />
+          <img src="/images/co2.png" />
+          <img src="/images/co3.jpg" />
+          <img src="/images/co4.jpg" />
+          <img src="/images/co5.png" />
+          <img src="/images/co6.jpg" />
+          <img src="/images/co7.png" />
+          <img src="/images/co8.png" />
         </Carousel>
 
       </div>
@@ -278,8 +279,8 @@ sunt in culpa qui officia deserunt mollit anim id est laborum.</p>{" "}
         <card className="block-example border border-blue" style={{ Width: "50%", marginBottom: 17, marginLeft: 25 }}>
           <CardContent >
 
-            <div class="responsive">
-              <Iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3805.1483016753223!2d78.4072534143839!3d17.500432704142323!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb91c23427e381%3A0x7ec826b06addf631!2s2-22-114%2F1%2C%20Navodaya%20Colony%2C%20Kukatpally%2C%20Hyderabad%2C%20Telangana%20500072!5e0!3m2!1sen!2sin!4v1608294752141!5m2!1sen!2sin"
+            <div class="map-container">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3805.1483016753223!2d78.4072534143839!3d17.500432704142323!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb91c23427e381%3A0x7ec826b06addf631!2s2-22-114%2F1%2C%20Navodaya%20Colony%2C%20Kukatpally%2C%20Hyderabad%2C%20Telangana%20500072!5e0!3m2!1sen!2sin!4v1608294752141!5m2!1sen!2sin"
                 class="embed-responsive-item" allowfullscreen width="600" height="500" aria-hidden="false" tabindex="0" />
             </div>
           </CardContent>

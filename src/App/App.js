@@ -15,6 +15,7 @@ import FAQ from '../components/HomePage/Footerpages/Faq';
 import PrivacyPolicy from '../components/HomePage/Footerpages/Privacy Policy';
 import SiteMap from '../components/HomePage/Footerpages/Sitemap';
 import TermsCondition from '../components/HomePage/Footerpages/Terms and Conditions';
+import extra from '../components/extra'
 
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
         <Route exact path="/about-us" component={aboutus}></Route>
         <Route exact path="/service" component={Service}></Route>
         <Route exact path="/support" component={Support}></Route>
+        <Route exact path="/extra" component={extra}></Route>
         <Route path="/consultation" component={Consultation} />
         <Route path="/faq" component={FAQ} />
         <Route path="/privacy-policy" component={PrivacyPolicy} />

@@ -290,3 +290,133 @@ export default function LogInSide() {
 
 
 
+import React from 'react';
+import { MDBContainer, MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavbarToggler, MDBCollapse, MDBNavItem, MDBNavLink, } from 'mdbreact';
+import { BrowserRouter as Router } from 'react-router-dom';
+import * as Reactstrap from "react-bootstrap";
+import { DropdownMenu, DropdownToggle, DropdownItem, UncontrolledDropdown, } from 'reactstrap';
+import LogIn from './login'
+import { Nav, NavItem, NavLink } from 'reactstrap';
+
+
+
+class Header extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      collapse: false,
+    };
+    this.onClick = this.onClick.bind(this);
+  }
+
+  onClick() {
+    this.setState({
+      collapse: !this.state.collapse,
+    });
+  }
+
+  render() {
+    const bgPink = { backgroundColor: '#2394e4', marginBottom: 50 }
+
+    return (
+      <div>
+        <Router>
+          <div marginLeft="100">
+            <header>
+              <MDBNavbar style={bgPink} dark expand="md" scrolling fixed="top">
+                <MDBNavbarBrand>
+                  <Reactstrap.Navbar.Brand href="/" style={{ marginLeft: 100 }}>
+                    <img
+                      alt=""
+                      src="/images/logo.PNG"
+                      width="50"
+                      height="50"
+                      className="d-inline-block align-top"
+                    />
+                  </Reactstrap.Navbar.Brand>
+
+                  <strong style={{ color: "black" }}>a<span style={{ color: "#004170" }}>UX</span>tomate Technologies</strong>
+                </MDBNavbarBrand>
+                <MDBNavbarToggler onClick={this.onClick} />
+                <MDBCollapse isOpen={this.state.collapse} navbar>
+                  <MDBNavbarNav right>
+                    <Nav >
+                      <NavLink href="/about-us" style={{ color: "black" }}>About Us</NavLink>
+
+                      <UncontrolledDropdown nav inNavbar>
+                        <DropdownToggle nav caret style={{ color: "black" }}>
+                          Products
+              </DropdownToggle>
+                        <DropdownMenu left>
+                          <DropdownItem>
+                            product 1                </DropdownItem>
+                          <DropdownItem>
+                            product 2
+                </DropdownItem>
+
+                        </DropdownMenu>
+                      </UncontrolledDropdown>
+                      <NavLink href="/service" style={{ color: "black" }}>Services</NavLink>
+                      <NavLink href="/support" style={{ color: "black" }}>Support</NavLink>
+                      <NavLink href="/login" style={{ color: "#004170" }}><b>Login</b></NavLink>
+                    </Nav>
+                  </MDBNavbarNav>
+
+
+                </MDBCollapse>
+              </MDBNavbar>
+            </header>
+          </div>
+        </Router>
+
+
+      </div >
+    );
+  }
+}
+
+export default Header;
+
+
+
+
+import React from 'react';
+import styled from 'styled-components';
+
+const Ul = styled.ul`
+  list-style: none;
+  display: flex;
+  flex-flow: row nowrap;
+  li {
+    padding: 18px 10px;
+  }
+  @media (max-width: 768px) {
+    flex-flow: column nowrap;
+    background-color: #0D2538;
+    position: fixed;
+    transform: ${({ open }) => open ? 'translateX(0)' : 'translateX(100%)'};
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 300px;
+    padding-top: 3.5rem;
+    transition: transform 0.3s ease-in-out;
+    li {
+      color: #fff;
+    }
+  }
+`;
+
+const RightNav = ({ open }) => {
+  return (
+    <Ul open={open}>
+      <li>Home</li>
+      <li>About Us</li>
+      <li>Contact Us</li>
+      <li>Sign In</li>
+      <li>Sign Up</li>
+    </Ul>
+  )
+}
+
+export default RightNav

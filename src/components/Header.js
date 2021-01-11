@@ -24,7 +24,7 @@ class Header extends React.Component {
   }
 
   render() {
-    const bgPink = { backgroundColor: '#2394e4', marginBottom: 50 }
+    const bgPink = { backgroundColor: '#6db6eb', marginBottom: 50 }
 
     return (
       <div>
