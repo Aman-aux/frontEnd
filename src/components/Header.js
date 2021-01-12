@@ -20,11 +20,12 @@ class Header extends React.Component {
   onClick() {
     this.setState({
       collapse: !this.state.collapse,
+
     });
   }
 
   render() {
-    const bgPink = { backgroundColor: '#6db6eb', marginBottom: 50 }
+    const bgPink = { backgroundColor: '#778896', marginBottom: 50 }
 
     return (
       <div>
@@ -33,7 +34,7 @@ class Header extends React.Component {
             <header>
               <MDBNavbar style={bgPink} dark expand="md" scrolling fixed="top">
                 <MDBNavbarBrand>
-                  <Reactstrap.Navbar.Brand href="/" style={{ marginLeft: 100 }}>
+                  {/* <Reactstrap.Navbar.Brand href="/" style={{ marginLeft: 100 }}>
                     <img
                       alt=""
                       src="/images/logo.PNG"
@@ -41,16 +42,21 @@ class Header extends React.Component {
                       height="50"
                       className="d-inline-block align-top"
                     />
-                  </Reactstrap.Navbar.Brand>
-
-                  <strong style={{ color: "black" }}>a<span style={{ color: "#004170" }}>UX</span>tomate Technologies</strong>
+                  </Reactstrap.Navbar.Brand>     
+            <strong style={{ color: "black" }}>a<span style={{ color: "#004170" }}>UX</span>tomate Technologies</strong> */}
+                  <nav class="navbar">
+                    <a class="navbar-brand" href="#">
+                      <img src="/images/logo.PNG" width="30" height="30" class="d-inline-block align-top" alt="" />
+                      <strong style={{ color: "black" }}>a<span style={{ color: "#004170" }}>UX</span>tomate Technologies</strong>
+                    </a>
+                  </nav>
                 </MDBNavbarBrand>
                 <MDBNavbarToggler onClick={this.onClick} />
                 <MDBCollapse isOpen={this.state.collapse} navbar>
                   <MDBNavbarNav right>
                     <Nav >
                       <NavLink href="/about-us" style={{ color: "black" }}>About Us</NavLink>
-
+                      <br />
                       <UncontrolledDropdown nav inNavbar>
                         <DropdownToggle nav caret style={{ color: "black" }}>
                           Products
@@ -64,9 +70,13 @@ class Header extends React.Component {
 
                         </DropdownMenu>
                       </UncontrolledDropdown>
+                      <br />
                       <NavLink href="/service" style={{ color: "black" }}>Services</NavLink>
+                      <br />
                       <NavLink href="/support" style={{ color: "black" }}>Support</NavLink>
+                      <br />
                       <NavLink href="/login" style={{ color: "#004170" }}><b>Login</b></NavLink>
+
                     </Nav>
                   </MDBNavbarNav>
 

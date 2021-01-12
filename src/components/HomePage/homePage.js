@@ -1,7 +1,7 @@
 import React from 'react';
 import * as Reactstrap from "react-bootstrap";
 import { Button } from 'react-bootstrap';
-import { Paper } from '@material-ui/core'
+import { Divider, Paper } from '@material-ui/core'
 import Card from "../HomePage/Card";
 import { makeStyles } from '@material-ui/core/styles';
 import InputAdornment from "@material-ui/core/InputAdornment";
@@ -78,6 +78,12 @@ function HomePage(params) {
       paperShadow: "3px 3px 5px 6px #ccc",  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
     },
 
+    container: {
+      position: "relative",
+      overflow: "hidden",
+      paddingTop: "56.25%",
+
+    }
 
   }));
 
@@ -103,11 +109,11 @@ function HomePage(params) {
     <>
 
       <div style={{ marginLeft: 200, marginRight: 100, marginTop: 90 }}>
-        <h1>Software
+        <div> <h1>Software
         development and UI</h1>
 
-        <h1>Design Solutions</h1>
-        <br />
+          <h1>Design Solutions</h1>
+        </div>
        Perform software Development services and UX design
 solutions.<br /> <br />Contact us to convert your idea into successful <br /><br />
 solutions!!
@@ -120,18 +126,17 @@ solutions!!
       </div>
       <br />
 
-      <div id="About Us" style={{ backgroundColor: "#DBE0F1", paddingBottom: 20 }}>
+      <div id="About Us" style={{ backgroundColor: "#e7e3e3", paddingBottom: 20, paddingTop: 17 }}>
 
-        <h1 align="center" style={{ color: "#004170", marginBottom: 20 }}>About Us</h1>
+        <h1 align="center" style={{ color: "#004170" }}>About Us</h1>
         <div style={{ marginBottom: 20, marginLeft: 50, marginRight: 50 }}>
           <br />
           <div>
-            <div className="float-right">
-
+            <div >
+              <h2 style={{ marginTop: 20 }}>Vision</h2>
               <img className="float-right" height="200" width="200" src="/images/vision.jpg" alt="vision" ></img>
             </div>
             <div >
-              <h2 style={{ marginTop: 20 }}>Vision</h2>
               <p marginTop="10" >Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt
               ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
               in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
@@ -141,11 +146,11 @@ sunt in culpa qui officia deserunt mollit anim id est laborum.</p>{" "}
             </div>
           </div>
           <br />
-          <div>
+          <div style={{ marginTop: 50 }}>
 
-            <b> <h2 style={{ marginTop: 10, display: "inline-flex" }}>Mission </h2></b>
+            <b> <h2 style={{ marginTop: 20, display: "inline-flex" }}>Mission </h2></b>
 
-            <img className="float-left" src="/images/mission.jpg" alt="mission" height="150" width="300" style={{ paddingRight: 100 }}  ></img>
+            <img className="float-left" src="/images/mission.jpg" alt="mission" height="150" width="300" style={{ paddingRight: 100, margintop: 20 }}  ></img>
 
             <div marginTop="10">.Lorem ipsum dolor sit amet, consectetur adipiscing elit,
             sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
@@ -164,35 +169,31 @@ sunt in culpa qui officia deserunt mollit anim id est laborum.</p>{" "}
           <img src="/images/c2.PNG" />
           <img src="/images/c3.PNG" />
           <img src="/images/c4.PNG" />
-          <img src="/images/c5.PNG" />
-          <img src="/images/c6.PNG" />
-          <img src="/images/c7.PNG" />
-          <img src="/images/c8.PNG" />
+
         </Carousel>
       </div>
 
 
-      <div id="Our Products" style={{ backgroundColor: "#DBE0F1", paddingBlock: 15, paddingLeft: 10, marginTop: 17, marginBottom: 10 }}>
+      <div id="Our Products" style={{ backgroundColor: "#e7e3e3", paddingBlock: 15, paddingLeft: 10, marginTop: 17, marginBottom: 10 }}>
         <h1 align="center" style={{ color: "#004170 " }}>Our Products</h1>
         <br />
         <div style={{ marginBottom: 20, marginLeft: 50, marginRight: 50 }}>
           <br />
           <div>
-            <div className="float-right">
-              <img className="float-right" height="200" width="200" src="/images/comp.png" alt="vision" ></img>
-            </div>
-            <div >
-              <h2>Workplace Covid Management Solution</h2>
-              <p marginTop="10" >Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt
-              ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
-              in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-sunt in culpa qui officia deserunt mollit anim id est laborum.</p>{" "}
-              <Button backgroundColor="#00417" style={{ marginTop: 10 }}>
-                know more    </Button>
 
+            <b> <h2 style={{ marginTop: 10, display: "inline-flex" }}>Workplace Covid Management Solution</h2></b>
 
-            </div>
+            <img className="float-right" src="/images/images.jpg" alt="custom sft dev" height="200" width="300" style={{ paddingRight: 100 }}  ></img>
+
+            <div style={{ justifyContent: "center", marginTop: 10 }}>.Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
+              in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </div>
+            <Button backgroundColor="#00417" style={{ marginTop: 10 }}>
+              know more    </Button>
+
           </div>
+
           <br />
           <div>
 
@@ -200,7 +201,7 @@ sunt in culpa qui officia deserunt mollit anim id est laborum.</p>{" "}
 
             <img className="float-left" src="/images/comp2.png" alt="mission" height="150" width="300" style={{ paddingRight: 100 }}  ></img>
 
-            <div marginTop="10">.Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+            <div style={{ justifyContent: "center", marginTop: 10 }}>.Lorem ipsum dolor sit amet, consectetur adipiscing elit,
             sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
             exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
               in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </div>
@@ -219,22 +220,23 @@ sunt in culpa qui officia deserunt mollit anim id est laborum.</p>{" "}
           <br />
           <div style={{ marginBottom: 20, marginLeft: 50, marginRight: 50 }}>
             <br />
+
+
             <div>
-              <div className="float-right">
-                <img className="float-right" height="200" width="200" src="/images/comp3.png" alt="vision" ></img>
-              </div>
-              <div >
-                <h2>Custom software development</h2>
-                <p marginTop="10" >Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt
-                ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
-                in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-sunt in culpa qui officia deserunt mollit anim id est laborum.</p>{" "}
-                <Button backgroundColor="#00417" style={{ marginTop: 10 }}>
-                  know more    </Button>
 
+              <b> <h2 style={{ marginTop: 10, display: "inline-flex" }}>Custom software development </h2></b>
 
-              </div>
+              <img className="float-right" src="/images/comp3.png" alt="custom sft dev" height="150" width="300" style={{ paddingRight: 100 }}  ></img>
+
+              <div style={{ justifyContent: "center", marginTop: 10 }}>.Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+              exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
+              in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </div>
+              <Button backgroundColor="#00417" style={{ marginTop: 10 }}>
+                know more    </Button>
+
             </div>
+
             <br />
             <div>
 
@@ -265,7 +267,7 @@ sunt in culpa qui officia deserunt mollit anim id est laborum.</p>{" "}
           <img src="/images/co1.png" />
           <img src="/images/co2.png" />
           <img src="/images/co3.jpg" />
-          <img src="/images/co4.jpg" />
+          <img src="/images/co44.jpg" />
           <img src="/images/co5.png" />
           <img src="/images/co6.jpg" />
           <img src="/images/co7.png" />
@@ -273,13 +275,13 @@ sunt in culpa qui officia deserunt mollit anim id est laborum.</p>{" "}
         </Carousel>
 
       </div>
-      <div className={classes.solid} style={{ marginBottom: 17 }}></div>
+      <div className={classes.solid} style={{ marginBottom: 17, marginTop: 17 }}></div>
 
       <Reactstrap.CardGroup>
         <card className="block-example border border-blue" style={{ Width: "50%", marginBottom: 17, marginLeft: 25 }}>
           <CardContent >
 
-            <div class="map-container">
+            <div className="container">
               <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3805.1483016753223!2d78.4072534143839!3d17.500432704142323!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb91c23427e381%3A0x7ec826b06addf631!2s2-22-114%2F1%2C%20Navodaya%20Colony%2C%20Kukatpally%2C%20Hyderabad%2C%20Telangana%20500072!5e0!3m2!1sen!2sin!4v1608294752141!5m2!1sen!2sin"
                 class="embed-responsive-item" allowfullscreen width="600" height="500" aria-hidden="false" tabindex="0" />
             </div>
