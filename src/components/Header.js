@@ -45,9 +45,9 @@ class Header extends React.Component {
                   </Reactstrap.Navbar.Brand>     
             <strong style={{ color: "black" }}>a<span style={{ color: "#004170" }}>UX</span>tomate Technologies</strong> */}
                   <nav class="navbar">
-                    <a class="navbar-brand" href="#">
+                    <a class="navbar-brand" href="/">
                       <img src="/images/logo.PNG" width="30" height="30" class="d-inline-block align-top" alt="" />
-                      <strong style={{ color: "black" }}>a<span style={{ color: "#004170" }}>UX</span>tomate Technologies</strong>
+                      <strong style={{ color: "black", marginLeft: 10 }}>a<span style={{ color: "#004170" }}>UX</span>tomate Technologies</strong>
                     </a>
                   </nav>
                 </MDBNavbarBrand>

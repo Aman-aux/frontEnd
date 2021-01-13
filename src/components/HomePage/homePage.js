@@ -150,7 +150,7 @@ sunt in culpa qui officia deserunt mollit anim id est laborum.</p>{" "}
 
             <b> <h2 style={{ marginTop: 20, display: "inline-flex" }}>Mission </h2></b>
 
-            <img className="float-left" src="/images/mission.jpg" alt="mission" height="150" width="300" style={{ paddingRight: 100, margintop: 20 }}  ></img>
+            <img className="float-left" src="/images/image.jpg" alt="mission" height="150" width="300" style={{ paddingRight: 100, margintop: 20 }}  ></img>
 
             <div marginTop="10">.Lorem ipsum dolor sit amet, consectetur adipiscing elit,
             sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
@@ -295,7 +295,7 @@ sunt in culpa qui officia deserunt mollit anim id est laborum.</p>{" "}
               <TextField
                 className={classes.margin}
                 id="input-with-icon-textfield"
-                label="First Name"
+                placeholder="First Name"
                 InputProps={{
                   startAdornment: (
                     <InputAdornment position="start">
@@ -309,7 +309,7 @@ sunt in culpa qui officia deserunt mollit anim id est laborum.</p>{" "}
 
                 className={classes.margin}
                 id="input-with-icon-textfield"
-                label="Last Name"
+                placeholder="Last Name"
                 InputProps={{
                   startAdornment: (
                     <InputAdornment position="start">
@@ -323,12 +323,11 @@ sunt in culpa qui officia deserunt mollit anim id est laborum.</p>{" "}
 
               <TextField
 
+                style={{ paddingLeft: 40, paddingRight: 40 }}
 
-                label="Email Address"
                 margin="normal"
-                InputLabelProps={{
-                  shrink: true,
-                }}
+                placeholder="Email Address"
+                fullWidth
                 InputProps={{
                   startAdornment: (
                     <InputAdornment position="start">
@@ -341,16 +340,14 @@ sunt in culpa qui officia deserunt mollit anim id est laborum.</p>{" "}
               <br />
 
               <TextField
-
+                style={{ marginTop: 40, paddingLeft: 40, paddingRight: 40 }}
                 id="outlined-full-width"
-                label="Messages"
-                // marginLeft="100"
-                // marginRight="100"
+                placeholder="Messages"
+                fullWidth
+                multiline
+
                 margin="normal"
-                style={{ width: "auto" }}
-                InputLabelProps={{
-                  shrink: true,
-                }}
+
                 InputProps={{
                   startAdornment: (
                     <InputAdornment position="start">
@@ -362,21 +359,23 @@ sunt in culpa qui officia deserunt mollit anim id est laborum.</p>{" "}
 
               />
               <br />
-              <Button size-lg="true" backgroundcolor="#004170" style={{ marginTop: 20 }} >
-                <h5> Submit</h5>    </Button>
+              <Button style={{ marginTop: 20, textAlign: "center", marginLeft: 20, marginRight: 20 }} >
+                <p style={{ paddingTop: 10 }}> Submit </p>    </Button>
 
             </CardContent>
           </div>
         </card>
       </Reactstrap.CardGroup>
-      <div align="center" style={{ paddingBottom: "50" }}>
+      <div align="center" style={{ paddingBottom: "50", marginBottom: 10 }}>
         <div class="card text-center shadow-lg   bg-white rounded" style={{ justifyContent: "center" }}>
 
           <div className="card-body " style={{ paddingBottom: 50 }}>
             <h3> <b className="card-text" style={{ color: "#004170" }}>Do you have any design idea? <br />
 Push here to get started!!</b></h3>
-            <Button backgroundColor="#00417" style={{ marginTop: 10 }}>
-              Get Started    </Button>
+            <div>
+              <Button backgroundColor="#00417" style={{ marginTop: 10 }}>
+                Get Started    </Button>
+            </div>
           </div>
         </div >
       </div>

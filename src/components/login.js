@@ -120,22 +120,44 @@ export default function LogInSide() {
   const formik = useFormik({
     initialValues: {
       Name: "",
-      email: "",
+      // email: "",
       password: "",
     },
+    
 
     validationSchema: Yup.object({
       Name: Yup.string()
         .min(2, "Mininum 2 characters")
         .max(25, "Maximum 25 characters")
         .required("Required!"),
-      email: Yup.string()
-        .email("Invalid email format")
-        .required("Required!"),
+      // email: Yup.string()
+      //   .email("Invalid email format")
+      //   .required("Required!"),
 
       password: Yup.string()
         .min(8, "Minimum 8 characters")
         .required("Required!"),
+
+    }),
+    onSubmit: values => {
+      alert(JSON.stringify(values, null, 2));
+    }
+  });
+  const formik_mail = useFormik({
+    initialValues: {
+      
+      email: "",
+      
+    },
+    
+
+    validationSchema: Yup.object({
+     
+      email: Yup.string()
+        .email("Invalid email format")
+        .required("Required!"),
+
+      
 
     }),
     onSubmit: values => {
@@ -200,9 +222,11 @@ export default function LogInSide() {
                 }}
 
               />
+              <div className="text-danger">
               {formik.errors.Name && formik.touched.Name && (
                 <p>{formik.errors.Name}</p>
               )}
+              </div>
             </div>
 
             <div>
@@ -224,9 +248,12 @@ export default function LogInSide() {
                   )
                 }}
               />
+              <div className="text-danger">
               {formik.errors.password && formik.touched.password && (
                 <p>{formik.errors.password}</p>
-              )}            </div>
+              )}       
+              </div>
+                   </div>
             <br />
             <Box mx="auto" bgcolor="background.paper" p={1}>
               <Button mx="auto" {...defaultProps} borderRadius={55} variant="contained" color="primary" aria-label="contained primary button group"
@@ -241,13 +268,13 @@ export default function LogInSide() {
                 <b variant="outlined" color="primary" autoFocus onClick={handleClickOpen}>
                   Forget Password?
       </b>
-                <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
+                <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title" fullWidth>
                   <DialogTitle id="form-dialog-title">Forget Password</DialogTitle>
                   <DialogContent>
                     <DialogContentText>
                       Please enter your registered mail id
           </DialogContentText>
-                    <form onSubmit={formik.handleSubmit}>
+                    <form onSubmit={formik_mail.handleSubmit}>
 
                       <div>
                         <TextField
@@ -255,8 +282,8 @@ export default function LogInSide() {
                           margin="dense"
                           type="email"
                           name="email"
-                          value={formik.values.email}
-                          onChange={formik.handleChange}
+                          value={formik_mail.values.email}
+                          onChange={formik_mail.handleChange}
                           fullWidth
                           InputProps={{
                             startAdornment: (
@@ -267,8 +294,8 @@ export default function LogInSide() {
                           }} className={classes.margin}
 
                         />
-                        {formik.errors.email && formik.touched.email && (
-                          <p>{formik.errors.email}</p>
+                        {formik_mail.errors.email && formik_mail.touched.email && (
+                          <p>{formik_mail.errors.email}</p>
                         )}
                       </div>
                     </form>

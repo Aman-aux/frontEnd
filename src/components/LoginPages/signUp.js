@@ -23,16 +23,45 @@ import GoogleLogin from 'react-google-login';
 import axios from 'axios'
 
 
+class DocumentInput extends React.Component {
+  render() {
+    return <TextField
+      type="text"
+      name="organisation"
+      placeholder="organisation"
+      id="organisation"
+      value={this.state.input.organisation}
+      onChange={this.handleChange}
+      InputProps={{
+        startAdornment: (
+          <InputAdornment position="start">
+            <BusinessIcon />
+          </InputAdornment>
+        )
+      }}
+      name={`document-${this.props.index}-document`}
+    />;
+  }
+}
+
 export default class signUp extends React.Component {
   constructor() {
     super();
     this.state = {
       input: {},
-      errors: {}
+      errors: {},
+      documents: []
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.add = this.add.bind(this);
   }
+
+  add() {
+    const documents = this.state.documents.concat(DocumentInput);
+    this.setState({ documents });
+  }
+
 
   handleChange(event) {
     let input = this.state.input;
@@ -152,6 +181,9 @@ export default class signUp extends React.Component {
 
 
   render() {
+    const documents = this.state.documents.map((Element, index) => {
+      return <Element key={index} index={index} />
+    });
 
     const responseGoogle = (response) => {
       console.log(response);
@@ -216,7 +248,7 @@ export default class signUp extends React.Component {
               </div>
               <RadioGroup row aria-label="position">
                 <FormControlLabel value="Individual" control={<Radio color="primary" />} label="Individual" />
-                <FormControlLabel value="Organisation" control={<Radio color="primary" />} label="Organisation" />
+                <FormControlLabel value="Organisation" control={<Radio color="primary" />} onClick={this.add} label="Organisation" />
               </RadioGroup>
               <div>
                 <TextField
@@ -242,9 +274,10 @@ export default class signUp extends React.Component {
               <br />
               <div>
                 <TextField
+
                   type="text"
                   name="organisation"
-                  placeholder="organisation"
+                  placeholder="organisation name "
                   id="organisation"
                   value={this.state.input.organisation}
                   onChange={this.handleChange}
@@ -262,12 +295,11 @@ export default class signUp extends React.Component {
               <br />
               <br />
               <div>
-                <TextField
-                  type="email"
+              <TextField
+                  type="text"
                   name="email"
                   value={this.state.input.email}
                   onChange={this.handleChange}
-
                   placeholder="Enter email"
                   id="email"
                   InputProps={{
@@ -275,13 +307,14 @@ export default class signUp extends React.Component {
                       <InputAdornment position="start">
                         <EmailIcon />
                       </InputAdornment>
-                    )
+                    ) 
                   }}
                 />
 
                 <div className="text-danger">{this.state.errors.email}</div>
               </div>
               <br />
+             
               <br />
               <div>
                 <TextField
@@ -293,7 +326,7 @@ export default class signUp extends React.Component {
 
                   placeholder="Enter password"
                   id="password"
-                  border-color="#004170"
+                
                   InputProps={{
                     startAdornment: (
                       <InputAdornment position="start">
